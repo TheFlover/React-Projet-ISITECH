@@ -1,16 +1,19 @@
-import './App.css';
+import './App.css'
+import Card from './components/card'
+import TaskList from './components/TaskList'
 
-function Welcome(props) {
-  return <h1>Bonjour, {props.name}</h1>;
-}
 
-function App() {
+
+const App = () => {
+  const taTasks = ['Nettoyer', 'Balayer', 'Astiquer']
+
   return (
-    <div>
-      <Welcome name="Nicolas" />
-      <Welcome name="Florian" />
-    </div>
-  );
+    <>
+      <Card name='Pierre' age='21'/>
+
+      <TaskList tasks={taTasks}/>
+    </>
+  )
 }
 
 export default App;
