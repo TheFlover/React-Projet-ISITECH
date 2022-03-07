@@ -1,19 +1,32 @@
 import './App.css'
-import Card from './components/card'
 import TaskList from './components/TaskList'
 
 
 
 const App = () => {
-  const taTasks = ['Nettoyer', 'Balayer', 'Astiquer']
+  const tasks = [
+    {
+      task: 'Manger',
+      time: 1,
+      assign: 'Nicolas'
+    },
+    {
+      task: 'Dormir',
+      time: 10,
+      assign: 'Nicolas'
+    },
+    {
+      task: 'Se doucher',
+      time: 0.20,
+      assign: 'Florian'
+    }
+  ]
 
   return (
-    <>
-      <Card name='Pierre' age='21'/>
-
-      <TaskList tasks={taTasks}/>
-    </>
-  )
+    <div className="App">
+      <TaskList task={tasks}/>
+    </div>
+  );
 }
 
 export default App;

@@ -1,15 +1,14 @@
-import Task from './Task'
+import Task from "./Task";
 
 const TaskList = (props) => {
-    console.log(props)
-    
-    return(
+
+    return (
         <div className="tasklist">
-            {props.tasks.map(element => (
+            {props.task.map(element => (
                 <Task task={element}/>
             ))}
         </div>
-    )
+    );
 }
 
 export default TaskList;

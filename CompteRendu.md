@@ -24,7 +24,7 @@ Les composants ou components en anglais permettent de découper l'interface de l
 
 ### props
 
-Les props sont des entrées permettent de faire circuler des variables dans les components
+Les props sont des entrées permettent de faire circuler des variables dans les components.
 
 ### SpreadOperator 
 
@@ -38,3 +38,4 @@ Consiste à récupérer les premières valeurs d'un tableau dans un nouveau tabl
 
 On peut executer du code dans JSX en utilisant des balises.
 
+### CallBack
