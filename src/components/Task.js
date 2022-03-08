@@ -1,31 +1,26 @@
-import { useState, useCallback } from "react";
+import React, { useState } from 'react'
 
 const Task = (props) => {
+    const { task } = props
+    const [label, setLabel] = useState(task.label)
 
-    const [done, setDone] = useState(false);
-    const[NewTaskName, SetNewTaskName] = useState("");
-
-    const handleButton = () => {
-        setDone(!done);
+    const onClickHandler = (event) => {
+        props.onSubmit(event, label, task.id)
     }
 
-    const handleInputChange = (event) => {
-        SetNewTaskName(event.target.value)
+    const onChangeHandler = (event) => {
+        setLabel(event.target.value)
     }
-
-    const handleClick = useCallback(() => {    console.log('Clicked!');  }, []);
-
-    const { task } = props;
-
     return (
-        <div className="task">
-            Tâche : {task.task}<br/>
-            Temps : {task.time} heures<br/>
-            Personne : {task.assign}<br/>
-            <button onClick={handleButton}>{done ? "Pas terminé" : "Terminé"}</button><br/>
-            <input value={NewTaskName} onChange={handleInputChange} type="text"></input><br/>
-            <button onClick={handleClick}>Valider</button><br/><br/>
-        </div>
+        <>
+            <span> {task.label}</span>
+
+            <br />
+            <form onSubmit={onClickHandler}>
+                <input onChange={onChangeHandler} />
+                <button type='submit' > Click me ! </button>
+            </form>
+        </>
     )
 }
 

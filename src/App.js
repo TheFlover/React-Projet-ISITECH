@@ -6,18 +6,18 @@ import TaskList from './components/TaskList'
 const App = () => {
   const tasks = [
     {
-      task: 'Manger',
-      time: 1,
+      id: 1,
+      label: '',
       assign: 'Nicolas'
     },
     {
-      task: 'Dormir',
-      time: 10,
+      id: 2,
+      label: "Dormir",
       assign: 'Nicolas'
     },
     {
-      task: 'Se doucher',
-      time: 0.20,
+      id: 3,
+      label: 'Se doucher',
       assign: 'Florian'
     }
   ]

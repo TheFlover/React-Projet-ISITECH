@@ -20,7 +20,7 @@ Il y a deux types d'exports, les exports nommés et les exports default.
 
 ### Composant
 
-Les composants ou components en anglais permettent de découper l'interface de l'application en différents fichiers de code.
+Les composants ou components en anglais sont des fonctions qui permettent de découper l'interface de l'application en différents fichiers de code.
 
 ### props
 
@@ -39,3 +39,10 @@ Consiste à récupérer les premières valeurs d'un tableau dans un nouveau tabl
 On peut executer du code dans JSX en utilisant des balises.
 
 ### CallBack
+
+
+### Avantages et inconvéniants des différents types de CSS
+
+Fichier CSS normal :
+
+Module CSS :

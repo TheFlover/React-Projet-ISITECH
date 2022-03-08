@@ -1,14 +1,27 @@
-import Task from "./Task";
+import { useState } from "react"
+import Task from "./Task"
 
 const TaskList = (props) => {
 
+    const [taskListArray, setTaskListArray] = useState(props.list)
+
+    const handleSubmit = (event, value, idFromTask) => {
+        event.preventDefault()
+        console.log('event: ', event)
+        console.log('value inside TaskList comp: ', value)
+
+        setTaskListArray((previousState) => {
+            
+        })
+    }
+
     return (
-        <div className="tasklist">
-            {props.task.map(element => (
-                <Task task={element}/>
-            ))}
-        </div>
-    );
+        <>
+           { taskListArray.map((task)=> {
+              return <Task onSubmit={handleSubmit} key={task.id} task={task} />
+           }) } 
+        </>
+    )
 }
 
-export default TaskList;
+export default TaskList  
