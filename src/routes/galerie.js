@@ -1,5 +1,6 @@
 import Card from "../components/card"
 import styles from '../module/Flexbox.module.css'
+import Loading from '../module/Loading.module.css'
 import Select from 'react-select'
 import { useEffect, useState } from "react"
 import { getDepartments } from "../service/departement.service"
@@ -9,7 +10,8 @@ const Galerie = () => {
 
   const [selectArrayDepartments, setDepartement] = useState([{ value: 1, label: "En Chargement" }])
   const [selectValue, setValue] = useState()
-  const [arrayArtworksId, setArtworkId] = useState([1, 2, 3, 4, 5])
+  const [arrayArtworksId, setArtworkId] = useState([])
+  const [arrayArtworksIdSplice, setArtworkIdSplice] = useState([])
   const [arrayArtworks, setArtwork] = useState([])
 
   const FormateDepartementsArray = (departementsArray) => {
@@ -20,18 +22,23 @@ const Galerie = () => {
   }
 
   const buildArtworksArray = () => {
-    arrayArtworksId.map((idArtwork) => {
+
+    setArtworkIdSplice(arrayArtworksId.slice(0, 10))
+    console.log(arrayArtworksIdSplice)
+    setArtwork([])
+    arrayArtworksIdSplice.map((idArtwork) => {
       const response = getArtworksByIdHandler(idArtwork)
       response.then((Artworks) => {
         setArtwork((previousState) => {
           return [
             ...previousState,
-            { image: Artworks.primaryImage, date: Artworks.accessionYear, title: Artworks.title, description: Artworks.creditLine }
+            { image: Artworks.primaryImageSmall, date: Artworks.accessionYear, title: Artworks.title, description: Artworks.creditLine }
           ]
         })
 
       })
     })
+    console.log(arrayArtworks)
   }
 
   useEffect(() => {
@@ -67,12 +74,17 @@ const Galerie = () => {
         <Select options={selectArrayDepartments} value={selectValue} onChange={handleChange} />
       </div>
       <div className={styles["flex-inline"]}>
-
-
-        {arrayArtworks.map((artwork) => {
+        
+      {console.log(arrayArtworks)}
+      {arrayArtworks.length !== arrayArtworksIdSplice.length ? (
+        arrayArtworks.map((artwork) => {
           return <Card image={artwork.image} date={artwork.date} title={artwork.title} description={artwork.description} />
-        })}
+        })
+      ) : (
+        <div className={Loading["lds-ripple"]}><div></div><div></div></div>
+      )}
 
+      {console.log(arrayArtworks.length, " ", arrayArtworksIdSplice.length)}
 
       </div>
     </div>
