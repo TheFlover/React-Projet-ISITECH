@@ -1,32 +1,17 @@
 import './App.css'
-import TaskList from './components/TaskList'
-
+import { Outlet, Link } from "react-router-dom";
 
 
 const App = () => {
-  const tasks = [
-    {
-      id: 1,
-      label: '',
-      assign: 'Nicolas'
-    },
-    {
-      id: 2,
-      label: "Dormir",
-      assign: 'Nicolas'
-    },
-    {
-      id: 3,
-      label: 'Se doucher',
-      assign: 'Florian'
-    }
-  ]
-
   return (
-    <div className="App">
-      <TaskList task={tasks}/>
+    <div className="app">
+      <nav>
+        <Link className="nav-link" to="/">Artiste Paradise</Link>
+        <Link className="nav-link" to="/galerie">Galerie</Link>
+      </nav>
+      <Outlet />
     </div>
   );
 }
 
-export default App;
+export default App

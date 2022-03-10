@@ -1,10 +1,24 @@
+import styles from '../module/Card.module.css'; // Import css modules as styles
+
 const Card = (props) => {
-    return (
-      <div>
-        <h2> {props.name}...</h2>
-        <h1>Tu as {props.age} ans putain !!!</h1>
-      </div>
-    );
-  }
-  
-  export default Card;
+  return (
+    <div className={styles.card}>
+      <a href="https://www.google.com">
+        <div className={styles["card-image"]}><img src={props.image} alt="" /></div>
+        <div className={styles["card-body"]}>
+          <div className={styles["card-date"]}>
+            <time>{props.date}</time>
+          </div>
+          <div className={styles["card-title"]}>
+            <h3>{props.title}</h3>
+          </div>
+          <div className={styles["card-description"]}>
+            <p>{props.description}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  );
+}
+
+export default Card;

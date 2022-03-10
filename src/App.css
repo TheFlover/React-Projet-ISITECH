@@ -1,7 +1,35 @@
-.App {
-  text-align: left;
+body {
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+  background-color: white ;
+}
+
+/* Add a black background color to the top navigation */
+nav {
+  background-color: #132C33;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+nav .nav-link {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+nav .nav-link:hover {
+  background-color: #126E82;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+nav .nav-link.active {
+  background-color: #04AA6D;
+  color: white;
 }

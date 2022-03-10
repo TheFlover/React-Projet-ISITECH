@@ -1,48 +1,35 @@
-# <u>Table des matières </u>
-**[1. Projet](#projet)**
-  * [1.1. Sujet](#sujet)
-  * [1.2. Introduction](#introduction)
+# Cours
 
-# Projet
-
-## Sujet
-
-
-
-## Introduction
-
-
-## Cours
-
-### Export
+## Export
 
 Il y a deux types d'exports, les exports nommés et les exports default.
 
-### Composant
+## Composant
 
 Les composants ou components en anglais sont des fonctions qui permettent de découper l'interface de l'application en différents fichiers de code.
 
-### props
+## props
 
 Les props sont des entrées permettent de faire circuler des variables dans les components.
 
-### SpreadOperator 
+## SpreadOperator 
 
 Consiste à précéder de "..." un objet ou un tableau pour récupérer son expression et l'ajouter dans un autre tableau ou objet.
 
-### ArrayDestructuring
+## ArrayDestructuring
 
 Consiste à récupérer les premières valeurs d'un tableau dans un nouveau tableau.
 
-### JSX
+## JSX
 
 On peut executer du code dans JSX en utilisant des balises.
 
-### CallBack
-
-
-### Avantages et inconvéniants des différents types de CSS
+## Avantages et inconvéniants des différents types de CSS
 
 Fichier CSS normal :
 
+
+
 Module CSS :
+
+
