@@ -24,12 +24,4 @@ Consiste à récupérer les premières valeurs d'un tableau dans un nouveau tabl
 
 On peut executer du code dans JSX en utilisant des balises.
 
-## Avantages et inconvéniants des différents types de CSS
-
-Fichier CSS normal :
-
-
-
-Module CSS :
-
 
