@@ -3,7 +3,7 @@ import styles from '../module/Card.module.css'; // Import css modules as styles
 const Card = (props) => {
   return (
     <div className={styles.card}>
-      <a href="https://www.google.com">
+      <a href={props.link}>
         <div className={styles["card-image"]}><img src={props.image} alt="" /></div>
         <div className={styles["card-body"]}>
           <div className={styles["card-date"]}>

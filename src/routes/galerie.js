@@ -34,7 +34,7 @@ const Galerie = () => {
     await Promise.all(spliceID.map(async (idArtwork) => {
       const Artworks = await getArtworkById(idArtwork)
 
-      if (Artworks.primaryImageSmall !== "") return new_artWorks.push({ image: Artworks.primaryImageSmall, date: Artworks.accessionYear, title: Artworks.title, description: Artworks.creditLine })
+      if (Artworks.primaryImageSmall !== "") return new_artWorks.push({ image: Artworks.primaryImageSmall, date: Artworks.accessionYear, title: Artworks.title, description: Artworks.creditLine, link: Artworks.objectURL })
     }))
 
     setArtwork(new_artWorks)
@@ -53,7 +53,7 @@ const Galerie = () => {
 
       </div>
       <div className={styles["flex-inline"]}>
-        {loadingFinish ? arrayArtworks.map((artwork) => <Card image={artwork.image} date={artwork.date} title={artwork.title} description={artwork.description} />) : <div className={Loading["lds-ripple"]}><div></div><div></div></div>}
+        {loadingFinish ? arrayArtworks.map((artwork) => <Card image={artwork.image} date={artwork.date} title={artwork.title} description={artwork.description} link={artwork.link} />) : <div className={Loading["lds-ripple"]}><div></div><div></div></div>}
       </div>
     </div>
 
